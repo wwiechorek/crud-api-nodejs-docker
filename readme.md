@@ -18,9 +18,11 @@ docker-compose up
 
 Import db:
 Command:
+
 docker exec -i <container_db_name> mysql -uroot -p<db_root> bill < shared/dump.sql
 
 Ex (using .env.sample):
+
 docker exec -i nodejs_api_db mysql -uroot -p123456 bill < shared/dump.sql
 
 Author: William Wiechorek
