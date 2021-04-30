@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "760942f1-dc2d-48f3-aae2-c422d7fbfea0",
+		"name": "Bill CRUD NodeJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a bill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test 1\",\n    \"price\": 50,\n    \"due_date\": \"2020-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/bill",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read a bill",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/bill/22",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bill",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a bill",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/bill/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bill",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a bill",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test - update\",\n    \"price\": 50,\n    \"due_date\": \"2020-01-01\",\n    \"paid_date\": \"2020-01-05\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/bill/22",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bill",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search/List bill",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/bill?_offset=0&_limit=10&q=t",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bill"
+					],
+					"query": [
+						{
+							"key": "_offset",
+							"value": "0",
+							"description": "Offset items"
+						},
+						{
+							"key": "_limit",
+							"value": "10",
+							"description": "Limit result items"
+						},
+						{
+							"key": "q",
+							"value": "t",
+							"description": "Filter"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

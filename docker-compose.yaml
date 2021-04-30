@@ -1,0 +1,26 @@
+version: '3.8'
+
+services: 
+    mysqldb:
+        image: mysql
+        container_name: nodejs_api_db
+        restart: always
+        env_file: ./.env
+        environment:
+            MYSQL_ROOT_PASSWORD: $DB_PASS
+            MYSQL_DATABASE: $DB_NAME
+            MYSQL_USER: $DB_USER
+            MYSQL_PASSWORD: $DB_PASS
+        volumes:
+            - ./dbdata:/var/lib/mysql
+            - ./shared:/shared
+
+    api:
+        container_name: nodejs_api
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        ports:
+            - $PORT:3000
+        depends_on:
+            - mysqldb
