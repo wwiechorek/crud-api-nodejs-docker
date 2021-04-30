@@ -4,8 +4,11 @@ It`s a simple CRUD restfull API make in NodeJS
 ### Description
 
 MySQL as database
+
 Mysql2 library drive connector
+
 Promises to fetch db data
+
 Containers docker to run dev and prod
 
 Postman API file: API.postman_colllection.json
